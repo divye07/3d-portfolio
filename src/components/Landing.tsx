@@ -1,7 +1,25 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import "./styles/Landing.css";
 
+const TITLES = [
+  { h2: "AI/ML Engineer", h3: "Aspiring" },
+  { h2: "Auroral Labs", h3: "Co-Founder & CEO" },
+];
+
 const Landing = ({ children }: PropsWithChildren) => {
+  const [index, setIndex] = useState(0);
+  const [key, setKey] = useState(0); // Add a key to reset animations
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % TITLES.length);
+      setKey(prevKey => prevKey + 1); // Increment key to force re-render and animation restart
+    }, 2500); // Match the CSS animation duration
+    return () => clearInterval(interval);
+  }, []);
+
+  const current = TITLES[index];
+
   return (
     <>
       <div className="landing-section" id="landingDiv">
@@ -15,15 +33,8 @@ const Landing = ({ children }: PropsWithChildren) => {
             </h1>
           </div>
           <div className="landing-info">
-            <h3>Aspiring</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">AI/ML</div>
-              <div className="landing-h2-2">CEO</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">Engineer</div>
-              <div className="landing-h2-info-1">Auroral Labs</div>
-            </h2>
+            {current.h3 && <h3 key={`h3-${key}`} className="fade-title">{current.h3}</h3>}
+            <h2 key={`h2-${key}`} className="landing-info-h2 fade-title">{current.h2}</h2>
           </div>
         </div>
         {children}
