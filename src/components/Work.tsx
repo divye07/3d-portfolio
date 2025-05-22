@@ -42,33 +42,120 @@ const Work = () => {
     });
   }, []);
   return (
-    <div className="work-section" id="work">
-      <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
-        <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
-            <div className="work-box" key={index}>
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>0{index + 1}</h3>
+  <div className="work-section" id="work">
+    <div className="work-container section-container">
+      <h2>
+        My <span>Work</span>
+      </h2>
+      <div className="work-flex">
 
-                  <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
-                  </div>
-                </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+        {/* Project 1 */}
+        <div className="work-box">
+          <WorkImage image="/images/trashcam.png" alt="Trash Cam screenshot" />
+          <div className="work-info">
+            <div className="work-title">
+              <h3>1</h3>
+              <div>
+                <h4>Trash Cam</h4>
+                <p className="category">Waste Management | Web App</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
             </div>
-          ))}
+            <h4>Tools</h4>
+            <ul className="tool-list">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>HTML & CSS</li>
+              <li>Google Gemini API</li>
+            </ul>
+            <h4>Features</h4>
+            <ul className="feature-list">
+              <li>Waste Detection</li>
+              <li>Waste Classification</li>
+              <li>Waste Segmentation</li>
+            </ul>
+            <a
+              href="https://trashcam-devsprint.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="website-button">Visit Website</button>
+            </a>
+          </div>
         </div>
+
+        {/* Project 2 */}
+        <div className="work-box">
+          <WorkImage image="/images/voting.png" alt="Secure voting gdg" />
+          <div className="work-info">
+            <div className="work-title">
+              <h3>2</h3>
+              <div>
+                <h4>Secure voting GDG</h4>
+                <p className="category">Face-API.js | Web App</p>
+              </div>
+            </div>
+            <h4>Tools</h4>
+            <ul className="tool-list">
+              <li>React.js</li>
+              <li>Face-API.js</li>
+              <li>Gemini-Api integration</li>
+              <li>Firebase</li>
+            </ul>
+            <h4>Features</h4>
+            <ul className="feature-list">
+              <li>Real-time Voting Track</li>
+              <li>Admin Dashboard</li>
+              <li>2-Factor Authentication</li>
+            </ul>
+            <a
+              href="https://secure-voting-gdg.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="website-button">Visit Website</button>
+            </a>
+          </div>
+        </div>
+
+        {/* Project 3 */}
+        <div className="work-box">
+          <WorkImage image="/images/survey.png" alt="Aurora Pet Health screenshot" />
+          <div className="work-info">
+            <div className="work-title">
+              <h3>3</h3>
+              <div>
+                <h4>Survey APP</h4>
+                <p className="category">Referral survey form | Web App</p>
+              </div>
+            </div>
+            <h4>Tools</h4>
+            <ul className="tool-list">
+              <li>Firebase</li>
+              <li>Firestore</li>
+              <li>Next.js</li>
+              <li>Express.js</li>
+            </ul>
+            <h4>Features</h4>
+            <ul className="feature-list">
+              <li>Real-time referral link tracking</li>
+              <li>Firebase Authentication</li>
+              <li>Live Dashboard</li>
+            </ul>
+            <a
+              href="https://auroral-labs-survey.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="website-button">Visit Website</button>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Work;
